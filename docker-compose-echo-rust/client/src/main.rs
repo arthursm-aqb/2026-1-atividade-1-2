@@ -20,11 +20,11 @@ const CONNECTION_TIMEOUT_SECS: u8 = 5;
 // Ponto de entrada principal do cliente
 fn main() {
     // Lê a variável de ambiente ECHO_HOST; usa "echo-server" (nome do serviço Docker) como padrão
-    let host = env::var("ECHO_HOST").unwrap_or_else(|_| "echo-server".to_string());
+    let host = env::var("ECHO_HOST").unwrap();
     // Lê a variável de ambiente ECHO_PORT; usa "5000" como padrão
-    let port = env::var("ECHO_PORT").unwrap_or_else(|_| "5000".to_string());
+    let port = env::var("ECHO_PORT").unwrap();
     // Lê a mensagem a ser enviada ao servidor a partir da variável de ambiente
-    let message = env::var("ECHO_MESSAGE").unwrap_or_else(|_| "Olá do cliente echo!".to_string());
+    let message = env::var("ECHO_MESSAGE").unwrap();
     // Monta o endereço completo no formato "host:porta"
     let addr = format!("{}:{}", host, port);
 
