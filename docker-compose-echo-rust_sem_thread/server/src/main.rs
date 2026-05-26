@@ -1,9 +1,9 @@
 // Importa o módulo de variáveis de ambiente do sistema operacional
 use std::env;
 // Importa os traits de leitura e escrita de dados (Read e Write)
-use std::io::{Read, Write};
+use std::io;
 // Importa os tipos de rede TCP: ouvinte (TcpListener) e fluxo de conexão (TcpStream)
-use std::net::{TcpListener, TcpStream};
+use std::net;
 // Define o tamanho do buffer de leitura em bytes (1 KB)
 const BUFFER_SIZE: usize = 1024;
 
