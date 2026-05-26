@@ -1,27 +1,53 @@
 services:
+
+  # ── Serviço do Servidor ────────────────────────────────────────────────────
   echo-server:
+    # Constrói a imagem a partir do Dockerfile dentro da pasta ./server
     build:
       context: ./server
+
+    # Nome fixo do container para facilitar a identificação e referência pelo cliente
     container_name: echo-server-rust
+
+    # Variáveis de ambiente passadas ao container do servidor
     environment:
+      # Faz o servidor escutar em todas as interfaces de rede do container
       HOST: 0.0.0.0
+      # Porta TCP em que o servidor ficará aguardando conexões
       PORT: "5000"
+
+    # Verifica periodicamente se o servidor está pronto para aceitar conexões
     healthcheck:
+      # Tenta abrir uma conexão TCP na porta 5000; retorna 0 (ok) ou 1 (falha)
       test: ["CMD-SHELL", "bash -c '</dev/tcp/127.0.0.1/5000' 2>/dev/null && exit 0 || exit 1"]
+      # Intervalo entre cada verificação de saúde
       interval: 2s
+      # Tempo máximo para considerar a verificação como falha
       timeout: 2s
+      # Número de falhas consecutivas antes de marcar o serviço como "unhealthy"
       retries: 10
+
+    # Mapeia a porta 5000 do container para a porta 5000 do host (acesso externo)
     ports:
       - "5000:5000"
 
+  # ── Serviço do Cliente ────────────────────────────────────────────────────
   echo-client:
+    # Constrói a imagem a partir do Dockerfile dentro da pasta ./client
     build:
       context: ./client
-    container_name: echo-client-rust
+
+    # Garante que o cliente só inicia após o servidor estar saudável (healthcheck ok)
     depends_on:
       echo-server:
+        # Aguarda o servidor atingir o estado "healthy" antes de iniciar o cliente
         condition: service_healthy
+
+    # Variáveis de ambiente passadas ao container do cliente
     environment:
+      # Nome do host do servidor (usa o nome do container Docker como DNS)
       ECHO_HOST: echo-server-rust
+      # Porta do servidor que o cliente irá se conectar
       ECHO_PORT: "5000"
+      # Mensagem que o cliente enviará ao servidor
       ECHO_MESSAGE: "Mensagem via Docker Compose (Rust)"
