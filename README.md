@@ -7,7 +7,30 @@
 - **Objetivo**:
   1. Praticar programação de linhas de execução servidor
   2. Conhecer como linguagens de programação implementam linhas de execução
-- **data de apresentação**: 22/05/2026
+- **data de apresentação**: 29/05/2026
+
+---
+## Passos da ativadade
+1. Criar um programa servidor e um cliente, sem threads
+2. Testar a comunicação do cliente com o servidor
+3. Criar docker compose com 1 container servidor e 10 containers cliente
+4. Executar o docker compose para verificar o comportamento da comunicação
+5. Criar a segunda versão do servidor com threads
+6. Atualizar o docker compose para o servidor com threads
+7. Executar o docker compose para verificar o comportamento da comunicação
+8. Comparar o comportamento das versões sem e com threads do servidor
+
+**Lembre** de anotar suas dificuldades, curiosidades, dúvidas, entre outras coisas e acontecimentos do experimento.
+
+---
+## Guia de apresentação
+Sequência de slides
+1. Linguagem e Grupo
+2. Sumário
+3. Bibliotecas usadas
+4. Comparar comportamento com e sem thread
+5. Dificuldades
+6. Demais observações do grupo
 
 ---
 
