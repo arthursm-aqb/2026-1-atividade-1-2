@@ -4,9 +4,6 @@ use std::env;
 use std::io::{Read, Write};
 // Importa os tipos de rede TCP: ouvinte (TcpListener) e fluxo de conexão (TcpStream)
 use std::net::{TcpListener, TcpStream};
-// Importa o módulo de threads para criar linhas de execução paralelas
-use std::thread;
-
 // Define o tamanho do buffer de leitura em bytes (1 KB)
 const BUFFER_SIZE: usize = 1024;
 
@@ -79,12 +76,10 @@ fn main() {
         match stream {
             // Conexão aceita com sucesso
             Ok(stream) => {
-                // Cria uma nova thread para tratar este cliente de forma independente,
-                // permitindo que o servidor aceite outras conexões simultaneamente
-                thread::spawn(move || {
-                    // Chama a função de tratamento do cliente dentro da nova thread
-                    handle_client(stream);
-                });
+                // Trata o cliente de forma sequencial, diretamente na thread principal,
+                // sem criar novas threads. Enquanto um cliente é atendido,
+                // novos clientes aguardam na fila do sistema operacional.
+                handle_client(stream);
             }
             // Falha ao aceitar a conexão
             Err(e) => {
