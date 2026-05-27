@@ -1,6 +1,6 @@
 use std::env;
-use std::io;
-use std::net;
+use std::io::{Read, Write};
+use std::net::TcpStream;
 
 const BUFFER_SIZE: usize = 1024;
 
