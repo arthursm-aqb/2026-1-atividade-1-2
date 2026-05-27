@@ -33,6 +33,6 @@ fn main() {
     println!("[echo-client] Enviado:  {}", message);
     println!("[echo-client] Recebido: {}", response);
 
-    println!("[echo-client] Sucesso!");
+    println!("[echo-client] fim de execução!");
 }
 
