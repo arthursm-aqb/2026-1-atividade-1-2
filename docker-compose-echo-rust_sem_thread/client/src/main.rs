@@ -29,7 +29,7 @@ fn main() {
         }
     }
 
-    let response = String::from_utf8_lossy(&response_bytes).to_string();
+    let response = String::from_utf8_lossy(&response_bytes);
     println!("[echo-client] Enviado:  {}", message);
     println!("[echo-client] Recebido: {}", response);
 
