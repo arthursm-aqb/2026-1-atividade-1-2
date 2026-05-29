@@ -1,30 +1,31 @@
 
 
 Executado com docker-compose up -d --build --scale echo-client=10
-docker-compose-echo-rust_sem_thread git:(main) ✗ docker compose logs -t | grep "fim de execução"
+➜ docker-compose-echo-rust_sem_thread git:(main) ✗ docker compose logs -t | grep "fim de execução"
 
-echo-client-9  | 2026-05-27T23:50:36.139834632Z [echo-client] fim de execução!
-echo-client-3  | 2026-05-27T23:50:35.139715002Z [echo-client] fim de execução!
-echo-client-7  | 2026-05-27T23:50:38.140805156Z [echo-client] fim de execução!
-echo-client-4  | 2026-05-27T23:50:33.137255688Z [echo-client] fim de execução!
-echo-client-1  | 2026-05-27T23:50:40.143559673Z [echo-client] fim de execução!
-echo-client-10    | 2026-05-27T23:50:39.141434609Z [echo-client] fim de execução!
-echo-client-6     | 2026-05-27T23:50:37.140577602Z [echo-client] fim de execução!
-echo-client-8     | 2026-05-27T23:50:32.133596255Z [echo-client] fim de execução!
 echo-client-5     | 2026-05-27T23:50:31.133339750Z [echo-client] fim de execução!
+echo-client-8     | 2026-05-27T23:50:32.133596255Z [echo-client] fim de execução!
+echo-client-4     | 2026-05-27T23:50:33.137255688Z [echo-client] fim de execução!
 echo-client-2     | 2026-05-27T23:50:34.140034831Z [echo-client] fim de execução!
+echo-client-3     | 2026-05-27T23:50:35.139715002Z [echo-client] fim de execução!
+echo-client-9     | 2026-05-27T23:50:36.139834632Z [echo-client] fim de execução!
+echo-client-6     | 2026-05-27T23:50:37.140577602Z [echo-client] fim de execução!
+echo-client-7     | 2026-05-27T23:50:38.140805156Z [echo-client] fim de execução!
+echo-client-10    | 2026-05-27T23:50:39.141434609Z [echo-client] fim de execução!
+echo-client-1     | 2026-05-27T23:50:40.143559673Z [echo-client] fim de execução!
 
 
 Executado com docker-compose up -d --build --scale echo-client=10
 
 ➜  rust-com-thread git:(main) ✗ docker compose logs -t | grep "fim de execucao"
-echo-client-9  | 2026-05-27T23:47:34.391302125Z [echo-client] fim de execucao!
-echo-client-3  | 2026-05-27T23:47:29.295688327Z [echo-client] fim de execucao!
 echo-client-8  | 2026-05-27T23:47:28.938157977Z [echo-client] fim de execucao!
-echo-client-6  | 2026-05-27T23:47:33.631668221Z [echo-client] fim de execucao!
+echo-client-3  | 2026-05-27T23:47:29.295688327Z [echo-client] fim de execucao!
+echo-client-4  | 2026-05-27T23:47:30.134880558Z [echo-client] fim de execucao!
+echo-client-5  | 2026-05-27T23:47:31.156294952Z [echo-client] fim de execucao!
 echo-client-2  | 2026-05-27T23:47:31.668581941Z [echo-client] fim de execucao!
-echo-client-10  | 2026-05-27T23:47:32.017074735Z [echo-client] fim de execucao!
-echo-client-5            | 2026-05-27T23:47:31.156294952Z [echo-client] fim de execucao!
-echo-client-1            | 2026-05-27T23:47:34.091924042Z [echo-client] fim de execucao!
-echo-client-4            | 2026-05-27T23:47:30.134880558Z [echo-client] fim de execucao!
-echo-client-7            | 2026-05-27T23:47:32.449688655Z [echo-client] fim de execucao!
+echo-client-10 | 2026-05-27T23:47:32.017074735Z [echo-client] fim de execucao!
+echo-client-7  | 2026-05-27T23:47:32.449688655Z [echo-client] fim de execucao!
+echo-client-6  | 2026-05-27T23:47:33.631668221Z [echo-client] fim de execucao!
+echo-client-1  | 2026-05-27T23:47:34.091924042Z [echo-client] fim de execucao!
+echo-client-9  | 2026-05-27T23:47:34.391302125Z [echo-client] fim de execucao!
+
